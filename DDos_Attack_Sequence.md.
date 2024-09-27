@@ -1,0 +1,14 @@
+```mermaid
+    participant Attacker
+    participant BotNet   
+    participant WebServer
+    participant Firewall
+
+  Attacker->>BotNet: Command bots to initiate attack
+    BotNet->>WebServer: Flood server with excessive requests
+    WebServer->>Firewall: Forward traffic for analysis
+    Firewall-->>WebServer: Analyze and block malicious IPs
+    WebServer-->>BotNet: Deny requests due to overload
+    BotNet-->>Attacker: Report status of attack
+    Note right of Firewall: Traffic analysis and IP blocking
+```
